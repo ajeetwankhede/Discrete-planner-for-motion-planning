@@ -9,7 +9,7 @@
  *  Map class definition of methods.
  */
 
-#include <Map.hpp>
+#include "Map.hpp"
 #include <map>
 #include <vector>
 #include <utility>
@@ -29,14 +29,15 @@ Map::~Map() {
   // Destructor stub
 }
 
-void showMap(vector<pair<int, int> > path) {
+void Map::showMap(vector<pair<int, int> > path) {
 
 }
 
-bool verifyNodes(map<pair<int, int>, int> visitedNodes, pair<int, int> node) {
+bool Map::verifyNodes(map<pair<int, int>, int> visitedNodes,
+                      pair<int, int> node) {
   return false;
 }
 
-pair<int, int> action(int i, pair<int, int> currentNode) {
+pair<int, int> Map::action(int i, pair<int, int> currentNode) {
   return make_pair(0, 0);
 }
