@@ -14,6 +14,7 @@
 
 #include <vector>
 #include <utility>
+#include <string>
 
 /**
  * @brief Declaring class attributes and methods
@@ -43,6 +44,8 @@ class Output {
    *   @return none
    */
   void showOutput(std::vector<std::pair<int, int> > path);
+
+  std::string location;
 };
 
 #endif  // INCLUDE_OUTPUT_HPP_
