@@ -39,7 +39,7 @@ class Map {
   void showMap(std::vector<std::pair<int, int> > path);
 
   /**
-   *   @brief Verify the given node if it is not visited for the planner
+   *   @brief Verify that the given node is not visited
    *   @param map of pair of int containing the visited nodes
    *   @param pair of int of the node to be checked
    *   @return bool value specifying valid or invalid nodes
