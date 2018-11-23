@@ -35,7 +35,7 @@ void Map::showMap(vector<pair<int, int> > path) {
 
 bool Map::verifyNodes(map<pair<int, int>, int> visitedNodes,
                       pair<int, int> node) {
-  return false;
+  return true;
 }
 
 pair<int, int> Map::action(int i, pair<int, int> currentNode) {
