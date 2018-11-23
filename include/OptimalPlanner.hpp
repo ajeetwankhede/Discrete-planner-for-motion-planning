@@ -50,14 +50,14 @@ class OptimalPlanner {
       std::pair<int, int> goalPose);
 
   std::vector<std::pair<int, int> > path;
-
- private:
-  int noOfNodes;
-  double time;
   std::map<std::pair<int, int>, int> visitedNodes;
   std::map<std::pair<int, int>, double> parentCost;
   std::map<std::pair<int, int>, double> currentCost;
   std::map<std::pair<int, int>, std::pair<int, int> > parentNode;
+
+ private:
+  int noOfNodes;
+  double time;
 };
 
 #endif  // INCLUDE_OPTIMALPLANNER_HPP_
