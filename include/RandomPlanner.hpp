@@ -50,11 +50,12 @@ class RandomPlanner {
       std::pair<int, int> goalPose);
 
   std::vector<std::pair<int, int> > path;
+  std::map<std::pair<int, int>, int> visitedNodes;
+  int maxStepNumber;
+  double time;
 
  private:
-  int noOfNodes, maxStepNumber;
-  double time;
-  std::map<std::pair<int, int>, int> visitedNodes;
+  int noOfNodes;
 };
 
 #endif  // INCLUDE_RANDOMPLANNER_HPP_
