@@ -27,10 +27,17 @@ using std::vector;
  */
 TEST(RandomPlanner, initMapTest) {
   randomPlannerTestObject = std::make_shared<RandomPlanner>();
+  // Creating a map with no obstacles
+  vector<vector<int> > worldState(4, vector<int>(4, 0));
+  randomPlannerTestObject->M.world = worldState;
+  randomPlannerTestObject->M.length = worldState[0].size();
+  randomPlannerTestObject->M.width = worldState.size();
   // Call the initMap method
   randomPlannerTestObject->initMap();
-  // Check if visitedNodes map is initialized
+  // Check if visitedNodes is initialized
   EXPECT_FALSE(randomPlannerTestObject->visitedNodes.empty());
+  // Check if obstacleSpace is initialized
+  EXPECT_FALSE(randomPlannerTestObject->obstacleSpace.empty());
 }
 
 /**
