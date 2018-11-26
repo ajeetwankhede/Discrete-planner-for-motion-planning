@@ -29,8 +29,8 @@ TEST(Output, writeTextFileTest) {
   path.push_back(std::make_pair(1, 1));
   // Call the method to write a text file
   outputTestObject->writeTextFile(path);
-  outputTestObject->location =
-      "/home/ajetwankhede/eclipse-workspace/Discrete-planner-for-motion-planning/include/path.txt";
+  //outputTestObject->location =
+  //      "../output/path.txt";
   // Create a isftream object to handle text file
   std::ifstream myFile(outputTestObject->location);
   std::string line;
