@@ -9,16 +9,20 @@
  *  Output class definition of methods.
  */
 
+#include <iostream>
 #include <vector>
 #include <utility>
+#include <fstream>
 #include "Output.hpp"
 
 using std::vector;
 using std::pair;
+using std::cout;
+using std::endl;
 
 Output::Output() {
   // Initializing values to the attributes of Map class
-
+  location = "../output/path.txt";
 }
 
 Output::~Output() {
@@ -26,7 +30,22 @@ Output::~Output() {
 }
 
 void Output::writeTextFile(vector<pair<int, int> > path) {
+  // Save the trajectory coordinates in a text file
+  std::ofstream myFile;
+  myFile.open(location);
+  myFile << "The x and y coordinates of the optimal trajectory are:\n";
+  myFile << "X\tY\n";
+  for (auto i : path) {
+    myFile << i.first << "\t" << i.second << "\n";
+  }
+  myFile.close();
+  //cout << "A text file with trajectory coordinates has been saved at: "
+  //   << location << endl;
 }
 
 void Output::showOutput(vector<pair<int, int> > path) {
+  // Output the trajectory coordinates
+  for (auto i : path) {
+    cout << i.first << "\t" << i.second << endl;
+  }
 }
