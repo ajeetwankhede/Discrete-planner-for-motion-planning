@@ -1,8 +1,16 @@
 cmake_minimum_required(VERSION 3.2.1)
-project (scratch)
+project (discrete_planner)
 
 # Add project cmake modules to path.
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
+
+# Include boost
+find_package(Boost 1.54.0 REQUIRED COMPONENTS filesystem system iostreams)
+if(Boost_FOUND)
+  include_directories(${Boost_INCLUDE_DIRS})
+else()
+  message(FATAL_ERROR "This project requires boost.  Please install from http://www.boost.org")
+endif()
 
 # We probably don't want this to run on every build.
 option(COVERAGE "Generate Coverage Data" OFF)
