@@ -15,6 +15,7 @@
 #include <map>
 #include <vector>
 #include <utility>
+#include "Map.hpp"
 
 /**
  * @brief Declaring class attributes and methods
@@ -51,8 +52,11 @@ class RandomPlanner {
 
   std::vector<std::pair<int, int> > path;
   std::map<std::pair<int, int>, int> visitedNodes;
+  std::map<std::pair<int, int>, int> obstacleSpace;
   int maxStepNumber;
   double time;
+  // Create an object of class Map
+  Map M;
 
  private:
   int noOfNodes;
