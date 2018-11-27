@@ -104,12 +104,7 @@ vector<pair<int, int> > OptimalPlanner::search(vector<vector<int> > worldState,
       if (M.verifyNodes(visitedNodes, newNode)) {
         // Add the new node to the visited nodes
         visitedNodes[newNode] = 1;
-        double cost = 0.0;
-        if (i % 2 == 0) {
-          cost += sqrt(2);
-        } else {
-          cost += 1;
-        }
+        double cost = 1.0;
         double dist = pow(newNode.first - goalPose.first, 2)
             + pow(newNode.second - goalPose.second, 2);
         // Calculate the cost of the new node
