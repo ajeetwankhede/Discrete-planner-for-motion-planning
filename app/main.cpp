@@ -28,7 +28,7 @@ int main() {
   // Set start and goal pose
   pair<int, int> robotPose = make_pair(2, 0);
   pair<int, int> goalPose = make_pair(5, 5);
-  cout << "Do you manually enter the world or run a demo? "
+  cout << "Do you want to manually enter the world or run a demo? "
        << "\n1. Manually create map: m\n2. Run demo: d\n";
   char demo;
   cin >> demo;
