@@ -28,6 +28,11 @@ using std::vector;
  */
 TEST(OptimalPlanner, initMapTest) {
   OptimalPlannerTestObject = std::make_shared<OptimalPlanner>();
+  // Creating a map with no obstacles
+  vector<vector<int> > worldState(4, vector<int>(4, 0));
+  OptimalPlannerTestObject->M.world = worldState;
+  OptimalPlannerTestObject->M.length = worldState[0].size();
+  OptimalPlannerTestObject->M.width = worldState.size();
   // Call the initMap method
   OptimalPlannerTestObject->initMap();
   // Check if visitedNodes map is initialized
@@ -43,16 +48,8 @@ TEST(OptimalPlanner, initMapTest) {
  */
 TEST(OptimalPlanner, searchTest) {
   OptimalPlannerTestObject = std::make_shared<OptimalPlanner>();
-  // Creating a map
-  vector < vector<int> > worldState(6, vector<int>(6, 0));
-  // Adding obstacles
-  worldState[0][2] = 1;
-  worldState[1][2] = 1;
-  worldState[2][4] = 1;
-  worldState[3][4] = 1;
-  worldState[4][2] = 1;
-  worldState[4][3] = 1;
-  worldState[4][4] = 1;
+  // Creating a map with no obstacles
+  vector<vector<int> > worldState(4, vector<int>(4, 0));
   // Set start and goal pose
   pair<int, int> robotPose = make_pair(1, 1);
   pair<int, int> goalPose = make_pair(3, 1);
