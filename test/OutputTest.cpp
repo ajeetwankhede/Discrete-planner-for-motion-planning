@@ -9,8 +9,8 @@
  *  Test stubs for class Output.
  */
 
-#include <iostream>
 #include <gtest/gtest.h>
+#include <iostream>
 #include <vector>
 #include <string>
 #include <utility>
@@ -29,8 +29,6 @@ TEST(Output, writeTextFileTest) {
   path.push_back(std::make_pair(1, 1));
   // Call the method to write a text file
   outputTestObject->writeTextFile(path);
-  //outputTestObject->location =
-  //      "../output/path.txt";
   // Create a isftream object to handle text file
   std::ifstream myFile(outputTestObject->location);
   std::string line;
@@ -42,7 +40,6 @@ TEST(Output, writeTextFileTest) {
     getline(myFile, line);
     // Get the third line from the text file
     getline(myFile, line);
-    //std::cout << line << std::endl;
     myFile.close();
   } else {
     line = "Unable to open file";
