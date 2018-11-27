@@ -9,12 +9,12 @@
  *  OptimalPlanner class definition of methods.
  */
 
+#include <math.h>
 #include <iostream>
 #include <vector>
 #include <cmath>
 #include <utility>
 #include <algorithm>
-#include <chrono>
 #include "Map.hpp"
 #include "Output.hpp"
 #include "OptimalPlanner.hpp"
@@ -50,9 +50,10 @@ void OptimalPlanner::initMap() {
       if (M.world[i][j] == 0) {
         // Initialize visited nodes to zero
         visitedNodes[make_pair(i, j)] = 0;
-      } else
+      } else {
         // Add obstacle space to visited nodes
         visitedNodes[make_pair(i, j)] = 1;
+      }
     }
     cout << "\n";
   }
@@ -70,7 +71,7 @@ vector<pair<int, int> > OptimalPlanner::search(vector<vector<int> > worldState,
   // Call the initMap to initialize the variables
   initMap();
   // Start the timer
-  auto start = std::chrono::steady_clock::now();
+  clock_t start = clock();
   // Verify the start and goal pose to be within map boundaries
   // and outside obstacle space
   if (!M.verifyNodes(visitedNodes, robotPose)) {
@@ -166,11 +167,9 @@ vector<pair<int, int> > OptimalPlanner::search(vector<vector<int> > worldState,
     cout << "The search could not find an optimal path." << endl;
   }
   // Stop the timer
-  auto end = std::chrono::steady_clock::now();
+  clock_t stop = clock();
   // Calculate the time difference
-  std::chrono::duration<double> elapsed = end - start;
-  // Store the number of seconds
-  time = elapsed.count();
-  cout << "Time elapsed: " << time << " seconds." << endl;
+  time = static_cast<double>((stop - start) * 1000.0 / CLOCKS_PER_SEC);
+  cout << "Time elapsed: " << time << " ms." << endl;
   return path;
 }

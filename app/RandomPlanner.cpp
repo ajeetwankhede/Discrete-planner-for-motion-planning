@@ -10,15 +10,15 @@
  */
 
 #include <math.h>
+#include <time.h>
 #include <iostream>
-#include <chrono>
 #include <vector>
 #include <algorithm>
 #include <utility>
 #include <random>
 #include <map>
-#include <Map.hpp>
-#include <Output.hpp>
+#include "Map.hpp"
+#include "Output.hpp"
 #include "RandomPlanner.hpp"
 
 using std::vector;
@@ -52,9 +52,10 @@ void RandomPlanner::initMap() {
       if (M.world[i][j] == 0) {
         // Initialize obstacle space to zero
         obstacleSpace[make_pair(i, j)] = 0;
-      } else
+      } else {
         // Add obstacle space to visited nodes
         obstacleSpace[make_pair(i, j)] = 1;
+      }
     }
     cout << "\n";
   }
@@ -72,7 +73,7 @@ vector<pair<int, int> > RandomPlanner::search(vector<vector<int> > worldState,
   // Call the initMap to initialize the variables
   initMap();
   // Start the timer
-  auto start = std::chrono::steady_clock::now();
+  clock_t start = clock();
   // Verify the start and goal pose to be within map boundaries
   // and outside obstacle space
   if (!M.verifyNodes(obstacleSpace, robotPose)) {
@@ -141,7 +142,7 @@ vector<pair<int, int> > RandomPlanner::search(vector<vector<int> > worldState,
             noOfNodes++;
             steps++;
             // Clear visited node from memory
-            if (steps > (int) sqrt(maxStepNumber)) {
+            if (steps > static_cast<int>(sqrt(maxStepNumber))) {
               visitedNodes[queue[0]] = 0;
               steps = 0;
               // Remove the first node
@@ -171,11 +172,9 @@ vector<pair<int, int> > RandomPlanner::search(vector<vector<int> > worldState,
     path = {};
   }
   // Stop the timer
-  auto end = std::chrono::steady_clock::now();
+  clock_t stop = clock();
   // Calculate the time difference
-  std::chrono::duration<double> elapsed = end - start;
-  // Store the number of seconds
-  time = elapsed.count();
-  cout << "Time elapsed: " << time << " seconds." << endl;
+  time = static_cast<double>((stop - start) * 1000.0 / CLOCKS_PER_SEC);
+  cout << "Time elapsed: " << time << " ms." << endl;
   return path;
 }

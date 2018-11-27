@@ -20,11 +20,6 @@ using std::pair;
 using std::cout;
 using std::endl;
 
-Output::Output() {
-  // Initializing values to the attributes of Map class
-  location = "../output/path.txt";
-}
-
 Output::~Output() {
   // Destructor stub
 }
@@ -39,8 +34,8 @@ void Output::writeTextFile(vector<pair<int, int> > path) {
     myFile << i.first << "\t" << i.second << "\n";
   }
   myFile.close();
-  //cout << "A text file with trajectory coordinates has been saved at: "
-  //   << location << endl;
+  cout << "A text file with trajectory coordinates has been saved at: "
+       << location << endl;
 }
 
 void Output::showOutput(vector<pair<int, int> > path) {
