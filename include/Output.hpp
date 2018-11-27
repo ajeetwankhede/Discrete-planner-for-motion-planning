@@ -24,7 +24,9 @@ class Output {
   /**
    * @brief Constructor
    */
-  Output();
+  explicit Output(std::string x = "../output/path.txt")
+      : location(x) {
+  }
 
   /**
    * @brief Destructor
