@@ -15,6 +15,7 @@
 #include <map>
 #include <vector>
 #include <utility>
+#include "Map.hpp"
 
 /**
  * @brief Declaring class attributes and methods
@@ -54,6 +55,8 @@ class OptimalPlanner {
   std::map<std::pair<int, int>, double> parentCost;
   std::map<std::pair<int, int>, double> currentCost;
   std::map<std::pair<int, int>, std::pair<int, int> > parentNode;
+  // Create an object of class Map
+  Map M;
 
  private:
   int noOfNodes;
