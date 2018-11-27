@@ -52,13 +52,13 @@ The demo example should generate following figures.
 1. Random planner demo:
 
 <p align="center">
-<img src="/output/random-planner-output.png">
+<img src="/output/random planner output.png">
 </p>
 
 2. Optimal planner demo:
 
 <p align="center">
-<img src="/output/optimal-planner-output.png">
+<img src="/output/optimal planner output.png"> 
 </p>
 
 ## Building for code coverage
