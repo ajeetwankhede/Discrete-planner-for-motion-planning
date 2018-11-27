@@ -1,0 +1,91 @@
+\subsection*{\href{https://travis-ci.com/ajeetwankhede/Discrete-planner-for-motion-planning}\texttt{ } }
+
+\subsection*{Project Overview}
+
+2D discrete path planners are designed for the navigation of a holonomic robot in a known static and flat environment. All the planners share the same common interface and should implement the ​search​ method that has the following signature\+: search(world\+\_\+state, robot\+\_\+pose, goal\+\_\+pose) return path Inputs\+: world\+\_\+state is a 2D-\/grid representation of the environment where the value 0 indicates a navigable space and the value 1 indicates an occupied/obstacle space. robot\+\_\+pose is a tuple of two indices (x, y) which represent the current pose of the robot in world\+\_\+state​. goal\+\_\+pose​ ​is a tuple of two indices (x, y) which represent the goal in ​world\+\_\+state coordinate system. \mbox{\hyperlink{classOutput}{Output}}\+: path is a list of tuple (x, y) representing a path from the ​robot\+\_\+pose to the goal\+\_\+pose​ in world\+\_\+state​ or​ None​ if no path has been found. Two discrete planners are implemented\+:
+
+
+\begin{DoxyEnumerate}
+\item Random Planner The random planner tries to find a path to the goal by randomly moving in the environment (only orthogonal moves are legal). If the planner can not find an acceptable solution in less than max\+\_\+step\+\_\+number, the search should fail. The random planner, while being erratic, has a short memory, and it will never attempt to visit a cell that was visited in the last ​sqrt(max\+\_\+step\+\_\+number)​ steps except if this is the only available option.
+\item Optimal Planner A 2D path planner with A$\ast$ algorithm is designed and developed, for the navigation of the robot (only orthogonal moves are legal). The A$\ast$ algorithm ensures optimality of the path, with obstacle avoidance defined in the world.
+\end{DoxyEnumerate}
+
+The performance of these two planners is compared on basis of search space explored, time taken to find a path, and optimality of the path found. Random planner was run 10 times and optimal planner once, and the results are summarized in the following table.
+
+\subsection*{Link for S\+IP document}
+
+\mbox{[}S\+IP Document\mbox{]}\href{https://docs.google.com/spreadsheets/d/1OKOs_5UbBNU4q0WjCL7nKXChtRCFgHgl8hptJVIeyFo/edit?usp=sharing}\texttt{ https\+://docs.\+google.\+com/spreadsheets/d/1\+O\+K\+Os\+\_\+5\+Ub\+B\+N\+U4q0\+Wj\+C\+L7n\+K\+X\+Cht\+R\+C\+Fg\+Hgl8hpt\+J\+V\+Iey\+Fo/edit?usp=sharing}
+
+\subsection*{Dependencies}
+
+The path planning module has following dependencies\+:
+\begin{DoxyEnumerate}
+\item googletest
+\item cmake
+\item gnuplot
+\item \href{http://stahlke.org/dan/gnuplot-iostream/}\texttt{ gnuplot-\/iostream}
+\end{DoxyEnumerate}
+
+\#\# Standard install via command-\/line 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone --recursive https://github.com/ajeetwankhede/Discrete-planner-for-motion-planning}
+\DoxyCodeLine{cd <path to repository>}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{make}
+\DoxyCodeLine{Run tests: ./test/cpp-test}
+\DoxyCodeLine{Run program: ./app/shell-app}
+\end{DoxyCode}
+
+
+\subsection*{Run a demo}
+
+After running the steps for standard install via comman-\/line, run the program. The program asks whether the user wants to run a demo. Type \textquotesingle{}m\textquotesingle{} for a demo and then select any planner. The demo example should generate following figures.
+
+
+\begin{DoxyEnumerate}
+\item Random planner demo\+:
+\end{DoxyEnumerate}
+
+ 
+
+
+\begin{DoxyEnumerate}
+\item Optimal planner demo\+:
+\end{DoxyEnumerate}
+
+ 
+
+\subsection*{Building for code coverage}
+
+The code coverage of the functions is 82.\+1\% and to get a .html output run the following commands. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt-get install lcov}
+\DoxyCodeLine{cd <path to repository>}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake -D COVERAGE=ON -D CMAKE\_BUILD\_TYPE=Debug ../}
+\DoxyCodeLine{make}
+\DoxyCodeLine{make code\_coverage}
+\end{DoxyCode}
+ This generates a index.\+html page in the build/coverage sub-\/directory that can be viewed locally in a web browser. Screenshot of the .html file is shown below.
+
+ 
+
+\subsection*{How to generate Doxygen report}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt-get install doxygen}
+\DoxyCodeLine{cd <path to repository>}
+\DoxyCodeLine{mkdir Doxygen}
+\DoxyCodeLine{cd Doxygen}
+\DoxyCodeLine{doxygen -g <config\_file\_name>}
+\DoxyCodeLine{gedit <config\_file\_name>}
+\end{DoxyCode}
+ Update P\+R\+O\+J\+E\+C\+T\+\_\+\+N\+A\+ME and I\+N\+P\+UT fields in the configuration file. Then run the following command to generate the documentations. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{doxygen <config\_file\_name>}
+\end{DoxyCode}
+ In Doxygen folder, config file and genertaed reports are saved. 

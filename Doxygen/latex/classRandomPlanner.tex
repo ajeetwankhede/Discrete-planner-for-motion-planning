@@ -1,0 +1,97 @@
+\hypertarget{classRandomPlanner}{}\section{Random\+Planner Class Reference}
+\label{classRandomPlanner}\index{Random\+Planner@{Random\+Planner}}
+
+
+Declaring class attributes and methods.  
+
+
+
+
+{\ttfamily \#include $<$Random\+Planner.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRandomPlanner_a9eb31cb3b21cd5e50fde093f7a25a768}\label{classRandomPlanner_a9eb31cb3b21cd5e50fde093f7a25a768}} 
+\mbox{\hyperlink{classRandomPlanner_a9eb31cb3b21cd5e50fde093f7a25a768}{Random\+Planner}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRandomPlanner_ac6fbd37adee0015e88b94725e1479e0c}\label{classRandomPlanner_ac6fbd37adee0015e88b94725e1479e0c}} 
+virtual \mbox{\hyperlink{classRandomPlanner_ac6fbd37adee0015e88b94725e1479e0c}{$\sim$\+Random\+Planner}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRandomPlanner_ac912ac25d980a4ca2686fa954fed9669}{init\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Call this method to initialize different variables regarding to the world. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \mbox{\hyperlink{classRandomPlanner_afb0963c3771cb9a349a1cdb85ca7d379}{search}} (std\+::vector$<$ std\+::vector$<$ int $>$ $>$ world\+State, std\+::pair$<$ int, int $>$ robot\+Pose, std\+::pair$<$ int, int $>$ goal\+Pose)
+\begin{DoxyCompactList}\small\item\em Run the search method to find a path from robot pose to goal pose. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRandomPlanner_a407276fa42d3dcb31e114e561964f44b}\label{classRandomPlanner_a407276fa42d3dcb31e114e561964f44b}} 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ {\bfseries path}
+\item 
+\mbox{\Hypertarget{classRandomPlanner_af14ce51b7e457a6b4fbdbc4137f32d92}\label{classRandomPlanner_af14ce51b7e457a6b4fbdbc4137f32d92}} 
+std\+::map$<$ std\+::pair$<$ int, int $>$, int $>$ {\bfseries visited\+Nodes}
+\item 
+\mbox{\Hypertarget{classRandomPlanner_a9f0f6606426bd079c46c0e7a5fb85a93}\label{classRandomPlanner_a9f0f6606426bd079c46c0e7a5fb85a93}} 
+std\+::map$<$ std\+::pair$<$ int, int $>$, int $>$ {\bfseries obstacle\+Space}
+\item 
+\mbox{\Hypertarget{classRandomPlanner_ab87ab9d683da04a4fda77eceb68fe7c4}\label{classRandomPlanner_ab87ab9d683da04a4fda77eceb68fe7c4}} 
+int {\bfseries max\+Step\+Number}
+\item 
+\mbox{\Hypertarget{classRandomPlanner_affba6befaecd7066a93433429a70c4e9}\label{classRandomPlanner_affba6befaecd7066a93433429a70c4e9}} 
+double {\bfseries time}
+\item 
+\mbox{\Hypertarget{classRandomPlanner_a7d4dea739f1b4019df9c6e9dea08fe62}\label{classRandomPlanner_a7d4dea739f1b4019df9c6e9dea08fe62}} 
+\mbox{\hyperlink{classMap}{Map}} {\bfseries M}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Declaring class attributes and methods. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRandomPlanner_ac912ac25d980a4ca2686fa954fed9669}\label{classRandomPlanner_ac912ac25d980a4ca2686fa954fed9669}} 
+\index{Random\+Planner@{Random\+Planner}!init\+Map@{init\+Map}}
+\index{init\+Map@{init\+Map}!Random\+Planner@{Random\+Planner}}
+\subsubsection{\texorpdfstring{init\+Map()}{initMap()}}
+{\footnotesize\ttfamily void Random\+Planner\+::init\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Call this method to initialize different variables regarding to the world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRandomPlanner_afb0963c3771cb9a349a1cdb85ca7d379}\label{classRandomPlanner_afb0963c3771cb9a349a1cdb85ca7d379}} 
+\index{Random\+Planner@{Random\+Planner}!search@{search}}
+\index{search@{search}!Random\+Planner@{Random\+Planner}}
+\subsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily vector$<$ pair$<$ int, int $>$ $>$ Random\+Planner\+::search (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$}]{world\+State,  }\item[{std\+::pair$<$ int, int $>$}]{robot\+Pose,  }\item[{std\+::pair$<$ int, int $>$}]{goal\+Pose }\end{DoxyParamCaption})}
+
+
+
+Run the search method to find a path from robot pose to goal pose. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & of vector of int containin the world state \\
+\hline
+{\em pair} & of int of the robot pose or start node \\
+\hline
+{\em pair} & of int of the goal pose or end node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of pair of int containing the path found by the search algorithm. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ajetwankhede/eclipse-\/workspace/\+Discrete-\/planner-\/for-\/motion-\/planning/include/\mbox{\hyperlink{RandomPlanner_8hpp}{Random\+Planner.\+hpp}}\item 
+/home/ajetwankhede/eclipse-\/workspace/\+Discrete-\/planner-\/for-\/motion-\/planning/app/\mbox{\hyperlink{RandomPlanner_8cpp}{Random\+Planner.\+cpp}}\end{DoxyCompactItemize}

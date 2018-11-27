@@ -1,0 +1,58 @@
+\hypertarget{classgnuplotio_1_1Gnuplot}{}\section{gnuplotio\+:\+:Gnuplot Class Reference}
+\label{classgnuplotio_1_1Gnuplot}\index{gnuplotio\+::\+Gnuplot@{gnuplotio\+::\+Gnuplot}}
+Inheritance diagram for gnuplotio\+:\+:Gnuplot\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.469816cm]{classgnuplotio_1_1Gnuplot}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1Gnuplot_ab2fb14389ab63ad5d9b2e57169bbbf1d}\label{classgnuplotio_1_1Gnuplot_ab2fb14389ab63ad5d9b2e57169bbbf1d}} 
+{\bfseries Gnuplot} (const std\+::string \&\+\_\+cmd=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1Gnuplot_a4a4f48a548e6ce6d485ca0a868410078}\label{classgnuplotio_1_1Gnuplot_a4a4f48a548e6ce6d485ca0a868410078}} 
+{\bfseries Gnuplot} (F\+I\+LE $\ast$\+\_\+fh)
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1Gnuplot_a0d62f80988c3db4413a668e366406393}\label{classgnuplotio_1_1Gnuplot_a0d62f80988c3db4413a668e366406393}} 
+void {\bfseries clear\+Tmpfiles} ()
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1Gnuplot_ae3f4c07960aa5601cc72158be67f945c}\label{classgnuplotio_1_1Gnuplot_ae3f4c07960aa5601cc72158be67f945c}} 
+{\footnotesize template$<$typename T , typename Organization\+Mode $>$ }\\\mbox{\hyperlink{classgnuplotio_1_1Gnuplot}{Gnuplot}} \& {\bfseries send} (const T \&arg, Organization\+Mode)
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1Gnuplot_a46c9e01d2030768cd811d2e8dbd10dfa}\label{classgnuplotio_1_1Gnuplot_a46c9e01d2030768cd811d2e8dbd10dfa}} 
+{\footnotesize template$<$typename T , typename Organization\+Mode $>$ }\\\mbox{\hyperlink{classgnuplotio_1_1Gnuplot}{Gnuplot}} \& {\bfseries send\+Binary} (const T \&arg, Organization\+Mode)
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1Gnuplot_a43fe103649ec168b453c43aecdacce81}\label{classgnuplotio_1_1Gnuplot_a43fe103649ec168b453c43aecdacce81}} 
+{\footnotesize template$<$typename T , typename Organization\+Mode $>$ }\\std\+::string {\bfseries binfmt} (const T \&arg, const std\+::string \&arr\+\_\+or\+\_\+rec, Organization\+Mode)
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1Gnuplot_a9b9980e3b3d7cbb233a989e27468fa55}\label{classgnuplotio_1_1Gnuplot_a9b9980e3b3d7cbb233a989e27468fa55}} 
+{\footnotesize template$<$typename T , typename Organization\+Mode $>$ }\\std\+::string {\bfseries file} (const T \&arg, std\+::string filename, Organization\+Mode)
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1Gnuplot_ad90501e6dbab5379abcd76fd0e2e4ef1}\label{classgnuplotio_1_1Gnuplot_ad90501e6dbab5379abcd76fd0e2e4ef1}} 
+{\footnotesize template$<$typename T , typename Organization\+Mode $>$ }\\std\+::string {\bfseries binary\+File} (const T \&arg, std\+::string filename, const std\+::string \&arr\+\_\+or\+\_\+rec, Organization\+Mode)
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1Gnuplot_a4e730c762706c7235eb105bcb56ad185}\label{classgnuplotio_1_1Gnuplot_a4e730c762706c7235eb105bcb56ad185}} 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classgnuplotio_1_1Gnuplot}{Gnuplot}} {\bfseries G\+N\+U\+P\+L\+O\+T\+\_\+\+D\+E\+P\+R\+E\+C\+A\+TE} (\char`\"{}use send1d or send2d\char`\"{}) \&send(const T \&arg)
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1Gnuplot_aeb3ba94ed04ecd46b55f89591ba23e7c}\label{classgnuplotio_1_1Gnuplot_aeb3ba94ed04ecd46b55f89591ba23e7c}} 
+{\footnotesize template$<$typename T $>$ }\\std\+::string {\bfseries G\+N\+U\+P\+L\+O\+T\+\_\+\+D\+E\+P\+R\+E\+C\+A\+TE} (\char`\"{}use binfmt1d or binfmt2d\char`\"{}) binfmt(const T \&arg
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1Gnuplot_a2d194dbd4d2f3475ff6f9b8384e62a9f}\label{classgnuplotio_1_1Gnuplot_a2d194dbd4d2f3475ff6f9b8384e62a9f}} 
+std\+::string const std\+::string \& {\bfseries arr\+\_\+or\+\_\+rec}
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1Gnuplot_a92a4f6322e486de17db4507a5fc77348}\label{classgnuplotio_1_1Gnuplot_a92a4f6322e486de17db4507a5fc77348}} 
+std\+::vector$<$ int $>$ {\bfseries tmp\+\_\+files}
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1Gnuplot_a63e08bfd0cd02937d895ecfb6180107c}\label{classgnuplotio_1_1Gnuplot_a63e08bfd0cd02937d895ecfb6180107c}} 
+bool {\bfseries debug\+\_\+messages}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ajetwankhede/eclipse-\/workspace/\+Discrete-\/planner-\/for-\/motion-\/planning/include/gnuplot-\/iostream.\+h\end{DoxyCompactItemize}

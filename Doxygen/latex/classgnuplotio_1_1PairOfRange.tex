@@ -1,0 +1,46 @@
+\hypertarget{classgnuplotio_1_1PairOfRange}{}\section{gnuplotio\+:\+:Pair\+Of\+Range$<$ RT, RU $>$ Class Template Reference}
+\label{classgnuplotio_1_1PairOfRange}\index{gnuplotio\+::\+Pair\+Of\+Range$<$ R\+T, R\+U $>$@{gnuplotio\+::\+Pair\+Of\+Range$<$ R\+T, R\+U $>$}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1PairOfRange_a0cc8b0cc4d9c3377c43843ed9a658eeb}\label{classgnuplotio_1_1PairOfRange_a0cc8b0cc4d9c3377c43843ed9a658eeb}} 
+typedef std\+::pair$<$ typename R\+T\+::value\+\_\+type, typename R\+U\+::value\+\_\+type $>$ {\bfseries value\+\_\+type}
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1PairOfRange_a6a7bf8a5dd4ca0563eb71b1156d6cd9f}\label{classgnuplotio_1_1PairOfRange_a6a7bf8a5dd4ca0563eb71b1156d6cd9f}} 
+typedef \mbox{\hyperlink{classgnuplotio_1_1PairOfRange}{Pair\+Of\+Range}}$<$ typename R\+T\+::subiter\+\_\+type, typename R\+U\+::subiter\+\_\+type $>$ {\bfseries subiter\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1PairOfRange_a15055ed8b1c0af8febf20f5a24d7dc05}\label{classgnuplotio_1_1PairOfRange_a15055ed8b1c0af8febf20f5a24d7dc05}} 
+{\bfseries Pair\+Of\+Range} (const RT \&\+\_\+l, const RU \&\+\_\+r)
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1PairOfRange_af9c705aa88e6366910e279674961ff79}\label{classgnuplotio_1_1PairOfRange_af9c705aa88e6366910e279674961ff79}} 
+bool {\bfseries is\+\_\+end} () const
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1PairOfRange_adbb8ab0fb9f7245262041dd20444b96a}\label{classgnuplotio_1_1PairOfRange_adbb8ab0fb9f7245262041dd20444b96a}} 
+void {\bfseries inc} ()
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1PairOfRange_af4ed81400c73c45c9aa1e6d0ad14579f}\label{classgnuplotio_1_1PairOfRange_af4ed81400c73c45c9aa1e6d0ad14579f}} 
+value\+\_\+type {\bfseries deref} () const
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1PairOfRange_aaab5fb2c7de99651a2c7eef7685545fd}\label{classgnuplotio_1_1PairOfRange_aaab5fb2c7de99651a2c7eef7685545fd}} 
+\mbox{\hyperlink{classgnuplotio_1_1PairOfRange}{subiter\+\_\+type}} {\bfseries deref\+\_\+subiter} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1PairOfRange_ab49c6567f0fa6a82fa2a6245fd964659}\label{classgnuplotio_1_1PairOfRange_ab49c6567f0fa6a82fa2a6245fd964659}} 
+static const bool {\bfseries is\+\_\+container} = R\+T\+::is\+\_\+container \&\& R\+U\+::is\+\_\+container
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1PairOfRange_aada62f803432f04aff66f3c609329520}\label{classgnuplotio_1_1PairOfRange_aada62f803432f04aff66f3c609329520}} 
+{\footnotesize template$<$typename T , typename U , typename Print\+Mode $>$ }\\void {\bfseries deref\+\_\+and\+\_\+print} (std\+::ostream \&, const \mbox{\hyperlink{classgnuplotio_1_1PairOfRange}{Pair\+Of\+Range}}$<$ T, U $>$ \&, Print\+Mode)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ajetwankhede/eclipse-\/workspace/\+Discrete-\/planner-\/for-\/motion-\/planning/include/gnuplot-\/iostream.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,40 @@
+\hypertarget{classgnuplotio_1_1IteratorRange}{}\section{gnuplotio\+:\+:Iterator\+Range$<$ TI, TV $>$ Class Template Reference}
+\label{classgnuplotio_1_1IteratorRange}\index{gnuplotio\+::\+Iterator\+Range$<$ T\+I, T\+V $>$@{gnuplotio\+::\+Iterator\+Range$<$ T\+I, T\+V $>$}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1IteratorRange_a3d997739282df372a894c586c64a0687}\label{classgnuplotio_1_1IteratorRange_a3d997739282df372a894c586c64a0687}} 
+typedef boost\+::mpl\+::if\+\_\+c$<$ is\+\_\+container, \mbox{\hyperlink{structgnuplotio_1_1Error__InappropriateDeref}{Error\+\_\+\+Inappropriate\+Deref}}, TV $>$\+::type {\bfseries value\+\_\+type}
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1IteratorRange_a566ca30462a029f6df4ef16116f99acd}\label{classgnuplotio_1_1IteratorRange_a566ca30462a029f6df4ef16116f99acd}} 
+typedef \mbox{\hyperlink{classgnuplotio_1_1ArrayTraits}{Array\+Traits}}$<$ TV $>$\+::range\+\_\+type {\bfseries subiter\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1IteratorRange_adb89135fc292dfc5152120bc7fe6135e}\label{classgnuplotio_1_1IteratorRange_adb89135fc292dfc5152120bc7fe6135e}} 
+{\bfseries Iterator\+Range} (const TI \&\+\_\+it, const TI \&\+\_\+end)
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1IteratorRange_a966a08441bdd5f5e76e37ef06f507ad7}\label{classgnuplotio_1_1IteratorRange_a966a08441bdd5f5e76e37ef06f507ad7}} 
+bool {\bfseries is\+\_\+end} () const
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1IteratorRange_a369f392a561011f8f1c93d13fd976878}\label{classgnuplotio_1_1IteratorRange_a369f392a561011f8f1c93d13fd976878}} 
+void {\bfseries inc} ()
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1IteratorRange_a516ffb8c3716ef5e30f067b595f7dbfb}\label{classgnuplotio_1_1IteratorRange_a516ffb8c3716ef5e30f067b595f7dbfb}} 
+value\+\_\+type {\bfseries deref} () const
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1IteratorRange_a34ef78d431ad8a643d412851016b2122}\label{classgnuplotio_1_1IteratorRange_a34ef78d431ad8a643d412851016b2122}} 
+\mbox{\hyperlink{structgnuplotio_1_1Error__WasNotContainer}{subiter\+\_\+type}} {\bfseries deref\+\_\+subiter} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classgnuplotio_1_1IteratorRange_a3f79d84bdf18761b6e49ae54d050f8ff}\label{classgnuplotio_1_1IteratorRange_a3f79d84bdf18761b6e49ae54d050f8ff}} 
+static const bool {\bfseries is\+\_\+container} = \mbox{\hyperlink{classgnuplotio_1_1ArrayTraits}{Array\+Traits}}$<$TV$>$\+::is\+\_\+container
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/ajetwankhede/eclipse-\/workspace/\+Discrete-\/planner-\/for-\/motion-\/planning/include/gnuplot-\/iostream.\+h\end{DoxyCompactItemize}

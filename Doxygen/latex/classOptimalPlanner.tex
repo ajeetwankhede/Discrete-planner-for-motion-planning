@@ -1,0 +1,97 @@
+\hypertarget{classOptimalPlanner}{}\section{Optimal\+Planner Class Reference}
+\label{classOptimalPlanner}\index{Optimal\+Planner@{Optimal\+Planner}}
+
+
+Declaring class attributes and methods.  
+
+
+
+
+{\ttfamily \#include $<$Optimal\+Planner.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOptimalPlanner_a4e69f26a93d272239270348bf770a86c}\label{classOptimalPlanner_a4e69f26a93d272239270348bf770a86c}} 
+\mbox{\hyperlink{classOptimalPlanner_a4e69f26a93d272239270348bf770a86c}{Optimal\+Planner}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOptimalPlanner_a71703e8fe799a0a2cc94fdad5b2bf177}\label{classOptimalPlanner_a71703e8fe799a0a2cc94fdad5b2bf177}} 
+virtual \mbox{\hyperlink{classOptimalPlanner_a71703e8fe799a0a2cc94fdad5b2bf177}{$\sim$\+Optimal\+Planner}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOptimalPlanner_ab32e5f5dc1b4b599df70cc058701f2e8}{init\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Call this method to initialize different variables regarding to the world. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ \mbox{\hyperlink{classOptimalPlanner_ad5eb38c0130e5cc6c410799c47598e09}{search}} (std\+::vector$<$ std\+::vector$<$ int $>$ $>$ world\+State, std\+::pair$<$ int, int $>$ robot\+Pose, std\+::pair$<$ int, int $>$ goal\+Pose)
+\begin{DoxyCompactList}\small\item\em Run the search method to find a path from robot pose to goal pose. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOptimalPlanner_ae4f61f83a93f6c8f53c58019eaca80a9}\label{classOptimalPlanner_ae4f61f83a93f6c8f53c58019eaca80a9}} 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ {\bfseries path}
+\item 
+\mbox{\Hypertarget{classOptimalPlanner_abbbd1f7008cd82bf189dd573868493fc}\label{classOptimalPlanner_abbbd1f7008cd82bf189dd573868493fc}} 
+std\+::map$<$ std\+::pair$<$ int, int $>$, int $>$ {\bfseries visited\+Nodes}
+\item 
+\mbox{\Hypertarget{classOptimalPlanner_a819dec74f42967461d386818bc7529ae}\label{classOptimalPlanner_a819dec74f42967461d386818bc7529ae}} 
+std\+::map$<$ std\+::pair$<$ int, int $>$, double $>$ {\bfseries parent\+Cost}
+\item 
+\mbox{\Hypertarget{classOptimalPlanner_ae0c4420e7e17f454e8dee52cb527007f}\label{classOptimalPlanner_ae0c4420e7e17f454e8dee52cb527007f}} 
+std\+::map$<$ std\+::pair$<$ int, int $>$, double $>$ {\bfseries current\+Cost}
+\item 
+\mbox{\Hypertarget{classOptimalPlanner_ad89f362b4efc6ab0a8aab16db7606137}\label{classOptimalPlanner_ad89f362b4efc6ab0a8aab16db7606137}} 
+std\+::map$<$ std\+::pair$<$ int, int $>$, std\+::pair$<$ int, int $>$ $>$ {\bfseries parent\+Node}
+\item 
+\mbox{\Hypertarget{classOptimalPlanner_af052dee02cef52afaf45ca57e728c83d}\label{classOptimalPlanner_af052dee02cef52afaf45ca57e728c83d}} 
+\mbox{\hyperlink{classMap}{Map}} {\bfseries M}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Declaring class attributes and methods. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classOptimalPlanner_ab32e5f5dc1b4b599df70cc058701f2e8}\label{classOptimalPlanner_ab32e5f5dc1b4b599df70cc058701f2e8}} 
+\index{Optimal\+Planner@{Optimal\+Planner}!init\+Map@{init\+Map}}
+\index{init\+Map@{init\+Map}!Optimal\+Planner@{Optimal\+Planner}}
+\subsubsection{\texorpdfstring{init\+Map()}{initMap()}}
+{\footnotesize\ttfamily void Optimal\+Planner\+::init\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Call this method to initialize different variables regarding to the world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOptimalPlanner_ad5eb38c0130e5cc6c410799c47598e09}\label{classOptimalPlanner_ad5eb38c0130e5cc6c410799c47598e09}} 
+\index{Optimal\+Planner@{Optimal\+Planner}!search@{search}}
+\index{search@{search}!Optimal\+Planner@{Optimal\+Planner}}
+\subsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily vector$<$ pair$<$ int, int $>$ $>$ Optimal\+Planner\+::search (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$}]{world\+State,  }\item[{std\+::pair$<$ int, int $>$}]{robot\+Pose,  }\item[{std\+::pair$<$ int, int $>$}]{goal\+Pose }\end{DoxyParamCaption})}
+
+
+
+Run the search method to find a path from robot pose to goal pose. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & of vector of int containin the world state \\
+\hline
+{\em pair} & of int of the robot pose or start node \\
+\hline
+{\em pair} & of int of the goal pose or end node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of pair of int containing the path found by the search algorithm. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/ajetwankhede/eclipse-\/workspace/\+Discrete-\/planner-\/for-\/motion-\/planning/include/\mbox{\hyperlink{OptimalPlanner_8hpp}{Optimal\+Planner.\+hpp}}\item 
+/home/ajetwankhede/eclipse-\/workspace/\+Discrete-\/planner-\/for-\/motion-\/planning/app/\mbox{\hyperlink{OptimalPlanner_8cpp}{Optimal\+Planner.\+cpp}}\end{DoxyCompactItemize}
