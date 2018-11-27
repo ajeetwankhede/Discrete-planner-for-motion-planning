@@ -32,7 +32,7 @@ RandomPlanner::RandomPlanner() {
   // Initializing values to the attributes of Map class
   noOfNodes = 0;
   maxStepNumber = 100;
-  time = 0;
+  time = 0.0;
 }
 
 RandomPlanner::~RandomPlanner() {
@@ -81,7 +81,7 @@ vector<pair<int, int> > RandomPlanner::search(vector<vector<int> > worldState,
     return path;
   }
   if (!M.verifyNodes(obstacleSpace, goalPose)) {
-    cout << "Robot pose (" << goalPose.first << ", " << goalPose.second
+    cout << "Goal pose (" << goalPose.first << ", " << goalPose.second
          << ") input is wrong." << endl;
     return path;
   }
@@ -95,7 +95,6 @@ vector<pair<int, int> > RandomPlanner::search(vector<vector<int> > worldState,
   std::mt19937 rng(rd());
   int steps = 0, action, index;
   path.push_back(currentNode);
-  cout << "Max number of steps: " << maxStepNumber << endl;
   cout << "Search started..." << endl;
   while (noOfNodes < maxStepNumber && currentNode != goalPose) {
     // Check is action list is not empty
@@ -158,10 +157,9 @@ vector<pair<int, int> > RandomPlanner::search(vector<vector<int> > worldState,
     }
   }
   cout << "Search completed." << endl;
+  cout << "Number of nodes explored: " << noOfNodes << endl;
   // Find the path
   if (currentNode == goalPose) {
-    cout << "Number of nodes explored: " << noOfNodes << endl;
-    // Call tracePath to find the trajectory
     cout << "Path found." << endl;
     Output S;
     // Show the trajectory coordinates
@@ -170,7 +168,7 @@ vector<pair<int, int> > RandomPlanner::search(vector<vector<int> > worldState,
     S.writeTextFile(path);
   } else {
     cout << "The search could not find a path." << endl;
-    path.erase(path.begin());
+    path = {};
   }
   // Stop the timer
   auto end = std::chrono::steady_clock::now();
