@@ -16,7 +16,6 @@
 #include <utility>
 #include "Map.hpp"
 
-using std::map;
 using std::vector;
 using std::pair;
 using std::make_pair;
@@ -36,7 +35,6 @@ void Map::showMap(vector<pair<int, int> > path) {
   // Add obstacle points to xy_pts to display
   for (int i = 0; i < length; i++) {
     for (int j = 0; j < width; j++) {
-      //std::cout << world[i][j] << "\t";
       if (world[i][j] == 1) {
         xy_pts.push_back(make_pair(j, -i));
       }
@@ -53,8 +51,8 @@ void Map::showMap(vector<pair<int, int> > path) {
   }
   Gnuplot gp;
   // Create a plot of length l(Y-axis) and width w(X-axis)
-  gp << "set xrange [" << -0.25 << ":" << 0.25 + length << "]\nset yrange ["
-     << -0.25 - width << ":" << 0.25
+  gp << "set xrange [" << -0.25 << ":" << -0.5 + length << "]\nset yrange ["
+     << 0.5 - width << ":" << 0.25
      << "]\n";
   gp << "set title \"Planner Output\"\n";
   gp << "set pointsize 1\n";
@@ -72,7 +70,7 @@ void Map::showMap(vector<pair<int, int> > path) {
   gp.send1d(end);
 }
 
-bool Map::verifyNodes(map<pair<int, int>, int> visitedNodes,
+bool Map::verifyNodes(std::map<pair<int, int>, int> visitedNodes,
                       pair<int, int> node) {
   bool verify = false;
   // Verify if new node is inside the boundaries of map
