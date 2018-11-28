@@ -96,6 +96,7 @@ vector<pair<int, int> > RandomPlanner::search(vector<vector<int> > worldState,
   std::mt19937 rng(rd());
   int steps = 0, action, index;
   path.push_back(currentNode);
+  cout << "Max step number: " << maxStepNumber << endl;
   cout << "Search started..." << endl;
   while (noOfNodes < maxStepNumber && currentNode != goalPose) {
     // Check is action list is not empty
