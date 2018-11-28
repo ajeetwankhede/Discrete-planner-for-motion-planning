@@ -108,4 +108,4 @@ Then run the following command to generate the documentations.
 ```
 doxygen <config_file_name>
 ```
-In Doxygen folder, config file and genertaed reports are saved.
+In Doxygen folder, config file and genertaed reports are saved as html and latex format in Doxygen directory.
