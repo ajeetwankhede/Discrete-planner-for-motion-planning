@@ -1,0 +1,82 @@
+ajetwankhede@ajetwankhede-inspiron-5577:~/eclipse-workspace/Discrete-planner-for-motion-planning/build$ ./test/cpp-test 
+[==========] Running 7 tests from 4 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from Map
+[ RUN      ] Map.verifyNodesTest
+[       OK ] Map.verifyNodesTest (0 ms)
+[ RUN      ] Map.actionTest
+[       OK ] Map.actionTest (0 ms)
+[----------] 2 tests from Map (0 ms total)
+
+[----------] 2 tests from RandomPlanner
+[ RUN      ] RandomPlanner.initMapTest
+Entered World is: 
+0	0	0	0	
+0	0	0	0	
+0	0	0	0	
+0	0	0	0	
+[       OK ] RandomPlanner.initMapTest (1 ms)
+[ RUN      ] RandomPlanner.searchTest
+Entered World is: 
+0	0	0	0	
+0	0	0	0	
+0	0	0	0	
+0	0	0	0	
+Search started...
+Search completed.
+Number of nodes explored: 12
+Path found.
+1	1
+1	0
+0	0
+0	1
+1	1
+1	2
+1	3
+0	3
+0	2
+1	2
+2	2
+3	2
+3	1
+A text file with trajectory coordinates has been saved at: ../output/path.txt
+Time elapsed: 0.583 ms.
+[       OK ] RandomPlanner.searchTest (0 ms)
+[----------] 2 tests from RandomPlanner (1 ms total)
+
+[----------] 2 tests from OptimalPlanner
+[ RUN      ] OptimalPlanner.initMapTest
+Entered World is: 
+0	0	0	0	
+0	0	0	0	
+0	0	0	0	
+0	0	0	0	
+[       OK ] OptimalPlanner.initMapTest (1 ms)
+[ RUN      ] OptimalPlanner.searchTest
+Entered World is: 
+0	0	0	0	
+0	0	0	0	
+0	0	0	0	
+0	0	0	0	
+Search started...
+The search has been completed.
+Search completed.
+Number of nodes explored: 5
+Path found.
+Optimal path found.
+1	1
+2	1
+3	1
+A text file with trajectory coordinates has been saved at: ../output/path.txt
+Time elapsed: 0.37 ms.
+[       OK ] OptimalPlanner.searchTest (0 ms)
+[----------] 2 tests from OptimalPlanner (1 ms total)
+
+[----------] 1 test from Output
+[ RUN      ] Output.writeTextFileTest
+A text file with trajectory coordinates has been saved at: ../output/path.txt
+[       OK ] Output.writeTextFileTest (14 ms)
+[----------] 1 test from Output (14 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 4 test cases ran. (16 ms total)
