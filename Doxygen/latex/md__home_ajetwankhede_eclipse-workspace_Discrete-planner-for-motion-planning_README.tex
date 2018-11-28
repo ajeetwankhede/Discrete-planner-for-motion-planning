@@ -2,7 +2,17 @@
 
 \subsection*{Project Overview}
 
-2D discrete path planners are designed for the navigation of a holonomic robot in a known static and flat environment. All the planners share the same common interface and should implement the ​search​ method that has the following signature\+: search(world\+\_\+state, robot\+\_\+pose, goal\+\_\+pose) return path Inputs\+: world\+\_\+state is a 2D-\/grid representation of the environment where the value 0 indicates a navigable space and the value 1 indicates an occupied/obstacle space. robot\+\_\+pose is a tuple of two indices (x, y) which represent the current pose of the robot in world\+\_\+state​. goal\+\_\+pose​ ​is a tuple of two indices (x, y) which represent the goal in ​world\+\_\+state coordinate system. \mbox{\hyperlink{classOutput}{Output}}\+: path is a list of tuple (x, y) representing a path from the ​robot\+\_\+pose to the goal\+\_\+pose​ in world\+\_\+state​ or​ None​ if no path has been found. Two discrete planners are implemented\+:
+2D discrete path planners are designed for the navigation of a holonomic robot in a known static and flat environment. All the planners share the same common interface and should implement the ​search​ method that has the following signature\+: search(world\+\_\+state, robot\+\_\+pose, goal\+\_\+pose) return path
+
+Inputs\+: world\+\_\+state is a 2D-\/grid representation of the environment where the value 0 indicates a navigable space and the value 1 indicates an occupied/obstacle space.
+
+robot\+\_\+pose is a tuple of two indices (x, y) which represent the current pose of the robot in world\+\_\+state​.
+
+goal\+\_\+pose​ ​is a tuple of two indices (x, y) which represent the goal in ​world\+\_\+state coordinate system.
+
+\mbox{\hyperlink{classOutput}{Output}}\+: path is a list of tuple (x, y) representing a path from the ​robot\+\_\+pose to the goal\+\_\+pose​ in world\+\_\+state​ or​ None​ if no path has been found.
+
+Two discrete planners are implemented\+:
 
 
 \begin{DoxyEnumerate}
@@ -10,11 +20,17 @@
 \item Optimal Planner A 2D path planner with A$\ast$ algorithm is designed and developed, for the navigation of the robot (only orthogonal moves are legal). The A$\ast$ algorithm ensures optimality of the path, with obstacle avoidance defined in the world.
 \end{DoxyEnumerate}
 
-The performance of these two planners is compared on basis of search space explored, time taken to find a path, and optimality of the path found. Random planner was run 10 times and optimal planner once, and the results are summarized in the following table.
+Comparison of planners\+:
+
+The performance of these two planners is compared on basis of search space explored, time taken to find a path, and optimality of the path found. Random planner was run 10 times and optimal planner once. The optimal planner is able to find a solution within 26 steps counting the start pose. To compare the results with random planner, the value of max\+\_\+step\+\_\+number is set to 26. The results are summarized in the following table.
+
+ 
+
+From the results we can conclude that, the random planner finds a solution, 60\% of the time, when the max\+\_\+step\+\_\+size is equal to the nodes explored by the optimal planner. If, the random planner is able to find a path, it performs better in terms of search space explored, which is 63.\+2\% on an average, whereas, the optimal planner explores 89.\+6\% of the available space. Considering the complexity or optimality of solution, optimal planner performs better as the optimality is gauranteed by the heuristic function. The solution provided by random planner costs almost double to reach the goal node. In applications, where finding a feasible solution is considered more important than optimal solution, random planner can be used, as it is able to provide solution in $\sim$66\% less time compared to optimal planner. Considered that, the random planner is unable to find a path in first attempt, re-\/running the random planner is time efficient than running optimal planner once.
 
 \subsection*{Link for S\+IP document}
 
-\mbox{[}S\+IP Document\mbox{]}\href{https://docs.google.com/spreadsheets/d/1OKOs_5UbBNU4q0WjCL7nKXChtRCFgHgl8hptJVIeyFo/edit?usp=sharing}\texttt{ https\+://docs.\+google.\+com/spreadsheets/d/1\+O\+K\+Os\+\_\+5\+Ub\+B\+N\+U4q0\+Wj\+C\+L7n\+K\+X\+Cht\+R\+C\+Fg\+Hgl8hpt\+J\+V\+Iey\+Fo/edit?usp=sharing}
+\href{https://docs.google.com/spreadsheets/d/1OKOs_5UbBNU4q0WjCL7nKXChtRCFgHgl8hptJVIeyFo/edit?usp=sharing}\texttt{ S\+IP Document}
 
 \subsection*{Dependencies}
 
@@ -88,4 +104,4 @@ The code coverage of the functions is 82.\+1\% and to get a .html output run the
 \begin{DoxyCode}{0}
 \DoxyCodeLine{doxygen <config\_file\_name>}
 \end{DoxyCode}
- In Doxygen folder, config file and genertaed reports are saved. 
+ In Doxygen folder, config file and genertaed reports are saved as html and latex format in Doxygen directory. 

@@ -71,14 +71,24 @@ $(function() {
 </div>
 </a> </h2>
 <h2>Project Overview</h2>
-<p class="">2D discrete path planners are designed for the navigation of a holonomic robot in a known static and flat environment. All the planners share the same common interface and should implement the ​search​ method that has the following signature: search(world_state, robot_pose, goal_pose) return path Inputs: world_state is a 2D-grid representation of the environment where the value 0 indicates a navigable space and the value 1 indicates an occupied/obstacle space. robot_pose is a tuple of two indices (x, y) which represent the current pose of the robot in world_state​. goal_pose​ ​is a tuple of two indices (x, y) which represent the goal in ​world_state coordinate system. <a class="el" href="classOutput.html" title="Declaring class attributes and methods.">Output</a>: path is a list of tuple (x, y) representing a path from the ​robot_pose to the goal_pose​ in world_state​ or​ None​ if no path has been found. Two discrete planners are implemented:</p>
+<p class="">2D discrete path planners are designed for the navigation of a holonomic robot in a known static and flat environment. All the planners share the same common interface and should implement the ​search​ method that has the following signature: search(world_state, robot_pose, goal_pose) return path</p>
+<p class="">Inputs: world_state is a 2D-grid representation of the environment where the value 0 indicates a navigable space and the value 1 indicates an occupied/obstacle space.</p>
+<p class="">robot_pose is a tuple of two indices (x, y) which represent the current pose of the robot in world_state​.</p>
+<p class="">goal_pose​ ​is a tuple of two indices (x, y) which represent the goal in ​world_state coordinate system.</p>
+<p class=""><a class="el" href="classOutput.html" title="Declaring class attributes and methods.">Output</a>: path is a list of tuple (x, y) representing a path from the ​robot_pose to the goal_pose​ in world_state​ or​ None​ if no path has been found.</p>
+<p class="">Two discrete planners are implemented:</p>
 <ol type="1">
 <li>Random Planner The random planner tries to find a path to the goal by randomly moving in the environment (only orthogonal moves are legal). If the planner can not find an acceptable solution in less than max_step_number, the search should fail. The random planner, while being erratic, has a short memory, and it will never attempt to visit a cell that was visited in the last ​sqrt(max_step_number)​ steps except if this is the only available option.</li>
 <li>Optimal Planner A 2D path planner with A* algorithm is designed and developed, for the navigation of the robot (only orthogonal moves are legal). The A* algorithm ensures optimality of the path, with obstacle avoidance defined in the world.</li>
 </ol>
-<p class="">The performance of these two planners is compared on basis of search space explored, time taken to find a path, and optimality of the path found. Random planner was run 10 times and optimal planner once, and the results are summarized in the following table.</p>
+<p class="">Comparison of planners:</p>
+<p class="">The performance of these two planners is compared on basis of search space explored, time taken to find a path, and optimality of the path found. Random planner was run 10 times and optimal planner once. The optimal planner is able to find a solution within 26 steps counting the start pose. To compare the results with random planner, the value of max_step_number is set to 26. The results are summarized in the following table.</p>
+<div class="image">
+<img src="/output/Comparision.png" alt=""/>
+</div>
+ <p class="">From the results we can conclude that, the random planner finds a solution, 60% of the time, when the max_step_size is equal to the nodes explored by the optimal planner. If, the random planner is able to find a path, it performs better in terms of search space explored, which is 63.2% on an average, whereas, the optimal planner explores 89.6% of the available space. Considering the complexity or optimality of solution, optimal planner performs better as the optimality is gauranteed by the heuristic function. The solution provided by random planner costs almost double to reach the goal node. In applications, where finding a feasible solution is considered more important than optimal solution, random planner can be used, as it is able to provide solution in ~66% less time compared to optimal planner. Considered that, the random planner is unable to find a path in first attempt, re-running the random planner is time efficient than running optimal planner once.</p>
 <h2>Link for SIP document</h2>
-<p class="">[SIP Document]<a href="https://docs.google.com/spreadsheets/d/1OKOs_5UbBNU4q0WjCL7nKXChtRCFgHgl8hptJVIeyFo/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1OKOs_5UbBNU4q0WjCL7nKXChtRCFgHgl8hptJVIeyFo/edit?usp=sharing</a></p>
+<p class=""><a href="https://docs.google.com/spreadsheets/d/1OKOs_5UbBNU4q0WjCL7nKXChtRCFgHgl8hptJVIeyFo/edit?usp=sharing">SIP Document</a></p>
 <h2>Dependencies</h2>
 <p class="">The path planning module has following dependencies:</p><ol type="1">
 <li>googletest</li>
@@ -92,13 +102,13 @@ $(function() {
 <li>Random planner demo:</li>
 </ol>
 <div class="image">
-<img src="/output/random-planner-output.png" alt=""/>
+<img src="/output/random planner output.png" alt=""/>
 </div>
  <ol type="1">
 <li>Optimal planner demo:</li>
 </ol>
 <div class="image">
-<img src="/output/optimal-planner-output.png" alt=""/>
+<img src="/output/optimal planner output.png" alt=""/>
 </div>
  <h2>Building for code coverage</h2>
 <p class="">The code coverage of the functions is 82.1% and to get a .html output run the following commands. </p><div class="fragment"><div class="line">sudo apt-get install lcov</div><div class="line">cd &lt;path to repository&gt;</div><div class="line">mkdir build</div><div class="line">cd build</div><div class="line">cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../</div><div class="line">make</div><div class="line">make code_coverage</div></div><!-- fragment --><p> This generates a index.html page in the build/coverage sub-directory that can be viewed locally in a web browser. Screenshot of the .html file is shown below.</p>
@@ -106,7 +116,7 @@ $(function() {
 <img src="/output/Code Coverage.png" alt=""/>
 </div>
  <h2>How to generate Doxygen report</h2>
-<div class="fragment"><div class="line">sudo apt-get install doxygen</div><div class="line">cd &lt;path to repository&gt;</div><div class="line">mkdir Doxygen</div><div class="line">cd Doxygen</div><div class="line">doxygen -g &lt;config_file_name&gt;</div><div class="line">gedit &lt;config_file_name&gt;</div></div><!-- fragment --><p> Update PROJECT_NAME and INPUT fields in the configuration file. Then run the following command to generate the documentations. </p><div class="fragment"><div class="line">doxygen &lt;config_file_name&gt;</div></div><!-- fragment --><p> In Doxygen folder, config file and genertaed reports are saved. </p>
+<div class="fragment"><div class="line">sudo apt-get install doxygen</div><div class="line">cd &lt;path to repository&gt;</div><div class="line">mkdir Doxygen</div><div class="line">cd Doxygen</div><div class="line">doxygen -g &lt;config_file_name&gt;</div><div class="line">gedit &lt;config_file_name&gt;</div></div><!-- fragment --><p> Update PROJECT_NAME and INPUT fields in the configuration file. Then run the following command to generate the documentations. </p><div class="fragment"><div class="line">doxygen &lt;config_file_name&gt;</div></div><!-- fragment --><p> In Doxygen folder, config file and genertaed reports are saved as html and latex format in Doxygen directory. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
