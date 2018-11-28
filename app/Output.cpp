@@ -40,6 +40,7 @@ void Output::writeTextFile(vector<pair<int, int> > path) {
 
 void Output::showOutput(vector<pair<int, int> > path) {
   // Output the trajectory coordinates
+  cout << "Number of elements in path are: " << path.size() << endl;
   for (auto i : path) {
     cout << i.first << "\t" << i.second << endl;
   }
